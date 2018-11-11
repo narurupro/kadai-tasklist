@@ -4,7 +4,11 @@
   のタスク編集ページ
 </h1>  
   
-<%= form_for(@task)do|f|  %>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
+
+<%= form_for(@task) do|f|  %>
 
 <% if @task.errors.any?  %>
 
@@ -21,19 +25,26 @@
 
 <%  end %>
 
+<div class="form-group">
 
 <%= f.label :content, "タスク"  %>
 
-<%= f.text_field :content  %>
+<%= f.text_field :content, class: "form-control" %>
 
+</div>
+
+<div>
 
 <%= f.label :status, "スタッツ" %>
 
-<%= f.text_field :status  %>
+<%= f.text_field :status, class: "form-control"  %>
 
-<%= f.submit "投稿"  %>
+</div>
+
+<%= f.submit "投稿" ,class: "btn btn-paimary" %>
 
 <%  end %>
 
+ </div>
+</div>
 
-<%= link_to "一覧にもどる", tasks_path  %>
